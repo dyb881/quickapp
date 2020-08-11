@@ -1,0 +1,58 @@
+<template>
+  <div class="page-box column">
+    <div class="page-header align-center" style="padding-left: {{isBack ? 24 : 40}}dp;">
+      <image src="/images/icon-back.png" if="isBack" @click="back"></image>
+      <text>{{title}}</text>
+    </div>
+    <div class="page-content">
+      <slot name="default">
+      </slot>
+    </div>
+  </div>
+</template>
+<style lang="less">
+@import '../../common/style.less';
+
+.page-box {
+  width: 100%;
+}
+
+.page-header {
+  width: 100%;
+  height: 135dp;
+  background-color: #001532;
+
+  image {
+    width: 123dp;
+    height: 125dp;
+  }
+
+  text {
+    font-size: 36dp;
+    color: #ffffff;
+    font-weight: 700;
+  }
+}
+
+.page-content {
+  flex: 1;
+  width: 100%;
+}
+</style>
+
+<script>
+import { back, getState } from '@system.router'
+export default {
+  back,
+  data: {
+    isBack: false,
+    title: '',
+  },
+  onInit() {
+    const { router, display } = this.$app.$def.manifest
+    const { name } = getState()
+    this.isBack = name !== router.entry
+    this.title = display.pages[name].titleBarText
+  }
+}
+</script>

@@ -1,0 +1,101 @@
+<template>
+  <div class="modal-box fill-fixed center">
+    <div class="mask fill" @click="maskCancel"></div>
+    <div class="modal column" @click="modalClick">
+      <img class="close" src="/images/modal-close.png" alt="" if="closable" @click="onCancel" />
+      <text class="title" if="title">{{title}}</text>
+      <slot name="default">
+      </slot>
+      <div class="buttons center" if="showButton">
+        <div class="button-cancel" @click="onCancel">
+          <text>{{cancelText}}</text>
+        </div>
+        <div class="button" @click="onConfirm">
+          <text>{{confirmText}}</text>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    title: {},
+    closable: {
+      default: true
+    },
+    maskClosable: {
+      default: true
+    },
+    showButton: {
+      default: false
+    },
+    cancelText: {
+      default: '取消'
+    },
+    confirmText: {
+      default: '确认'
+    },
+  },
+  modalClick(e) {
+    e.stopPropagation()
+  },
+  maskCancel(e) {
+    this.maskClosable && this.onCancel(e)
+  },
+  onCancel(e) {
+    this.$emit('onCancel', e)
+  },
+  onConfirm(e) {
+    this.$emit('onConfirm', e)
+  },
+}
+</script>
+
+<style lang="less">
+@import '../../common/style.less';
+
+.modal-box {
+  .mask {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  .modal {
+    width: 900dp;
+    height: 450dp;
+    background-image: url(/images/modal-bg.png);
+    background-size: 100% 100%;
+    border-radius: 20dp;
+    align-items: center;
+    position: relative;
+    padding-top: 50dp;
+
+    .close {
+      width: 56dp;
+      height: 56dp;
+      position: absolute;
+      left: 20dp;
+      top: 20dp;
+    }
+
+    .title {
+      color: #fff;
+      font-size: 36dp;
+      font-weight: 700;
+      margin-bottom: 30dp;
+    }
+
+    .buttons {
+      width: 100%;
+      position: absolute;
+      bottom: 50dp;
+      left: 0;
+
+      .button-cancel {
+        margin-right: 45dp;
+      }
+    }
+  }
+}
+</style>

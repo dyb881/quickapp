@@ -1,0 +1,49 @@
+{
+  "package": "com.application.demo",
+  "name": "quickapp",
+  "versionName": "1.0.0",
+  "versionCode": "1",
+  "minPlatformVersion": "1020",
+  "icon": "/images/logo.png",
+  "features": [
+    {
+      "name": "system.prompt"
+    },
+    {
+      "name": "system.router"
+    },
+    {
+      "name": "system.shortcut"
+    }
+  ],
+  "permissions": [
+    {
+      "origin": "*"
+    }
+  ],
+  "config": {
+    "logLevel": "log",
+    "designWidth": 1920
+  },
+  "router": {
+    "entry": "pages/index",
+    "pages": {
+      "pages/index": {
+        "component": "index"
+      }
+    }
+  },
+  "display": {
+    "titleBar": false,
+    "titleBarBackgroundColor": "#f2f2f2",
+    "titleBarTextColor": "#414141",
+    "orientation": "landscape",
+    "backgroundColor": "#001334",
+    "pages": {
+      "pages/index": {
+        "titleBarText": "快应用"
+      }
+    }
+  },
+  "trustedSslDomains": []
+}

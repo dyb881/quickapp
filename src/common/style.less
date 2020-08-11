@@ -1,0 +1,77 @@
+// 填满
+.fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.fill-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// 上下对其
+.align-center {
+  display: flex;
+  align-items: center;
+}
+
+// 内容居中
+.center {
+  .align-center;
+  justify-content: center;
+}
+
+// 间隔均分
+.between {
+  display: flex;
+  justify-content: space-between;
+}
+
+// 间隔均分 并上下居中
+.between-center {
+  .between;
+  align-items: center;
+}
+
+// 纵向排列
+.column {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+}
+
+// 纵向居中
+.column-center {
+  .center;
+  flex-direction: column;
+}
+
+.button {
+  .center;
+  width: 300dp;
+  height: 80dp;
+  background-image: url(/images/button-default.png);
+
+  text {
+    color: #fff;
+    font-size: 36dp;
+    font-weight: 700;
+  }
+}
+
+.button-cancel {
+  .button;
+  background-image: url(/images/button-cancel.png);
+}
+
+.box-fill {
+  width: 100%;
+  margin: 40dp;
+  background-image: url(/images/box-fill-bg.png);
+}

@@ -1,0 +1,16 @@
+<import name="page" src="../../components/page"></import>
+
+<template>
+  <page>
+    <div class="box-fill index">
+      <text>hello world</text>
+    </div>
+  </page>
+</template>
+<style lang="less">
+@import '../../common/style.less';
+
+</style>
+<script>
+
+</script>
