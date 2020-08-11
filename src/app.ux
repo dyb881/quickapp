@@ -6,8 +6,16 @@
 import './common/global'
 import util from './common/util'
 
+const isProduction = false
+
 export default {
-  showMenu: util.showMenu,
-  createShortcut: util.createShortcut
+  ...util,
+  wsUrl: `${isProduction ? 'ws://host.cx580.com' : 'wss://test-host.cx580.com'}/ws`,
+  baseUrl: `${isProduction ? 'https://host.cx580.com' : 'https://test-host.cx580.com'}/cxy/api`,
+  data: {
+    user: {
+      info: {}
+    }
+  }
 }
 </script>

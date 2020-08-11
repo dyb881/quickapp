@@ -1,3 +1,6 @@
+import * as websocket from './websocket'
+import * as request from './request'
+
 /**
  * 显示菜单
  */
@@ -69,4 +72,6 @@ function createShortcut() {
 export default {
   showMenu,
   createShortcut,
+  ...websocket,
+  ...request,
 }
