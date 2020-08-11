@@ -1,0 +1,40 @@
+<import name="page" src="../../components/page"></import>
+
+<template>
+  <page>
+    <div class="box-fill center auth">
+      <div class="column-center item">
+        <image src="/images/logo-wechat.png" />
+        <text>微信登录</text>
+      </div>
+      <div class="column-center item" style="margin-left: 236dp;">
+        <image src="/images/logo-alipay.png" />
+        <text>支付宝登录</text>
+      </div>
+    </div>
+  </page>
+</template>
+<style lang="less">
+@import '../../common/style.less';
+
+.auth {
+  .item {
+    width: 180dp;
+
+    image {
+      width: 120dp;
+      height: 120dp;
+      margin-bottom: 33dp;
+    }
+
+    text {
+      color: #fff;
+      font-size: 36dp;
+      font-weight: 700;
+    }
+  }
+}
+</style>
+<script>
+
+</script>

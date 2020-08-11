@@ -30,6 +30,9 @@
     "pages": {
       "pages/index": {
         "component": "index"
+      },
+      "pages/auth": {
+        "component": "index"
       }
     }
   },
@@ -41,7 +44,10 @@
     "backgroundColor": "#001334",
     "pages": {
       "pages/index": {
-        "titleBarText": "快应用"
+        "titleBarText": "快应用APP"
+      },
+      "pages/auth": {
+        "titleBarText": "授权登录"
       }
     }
   },

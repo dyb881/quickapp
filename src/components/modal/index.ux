@@ -2,7 +2,7 @@
   <div class="modal-box fill-fixed center">
     <div class="mask fill" @click="maskCancel"></div>
     <div class="modal column" @click="modalClick">
-      <img class="close" src="/images/modal-close.png" alt="" if="closable" @click="onCancel" />
+      <image class="close" src="/images/modal-close.png" if="closable" @click="onCancel" />
       <text class="title" if="title">{{title}}</text>
       <slot name="default">
       </slot>

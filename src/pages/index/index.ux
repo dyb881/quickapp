@@ -2,8 +2,8 @@
 
 <template>
   <page>
-    <div class="box-fill column-center index">
-      <img src="/images/index-add.png" alt="" class="img" />
+    <div class="box-fill column-center index" @click="goAdd">
+      <image src="/images/index-add.png" class="add" />
       <text class="text">添加XX</text>
     </div>
   </page>
@@ -12,7 +12,7 @@
 @import '../../common/style.less';
 
 .index {
-  .img {
+  .add {
     width: 160dp;
     height: 160dp;
     margin-bottom: 40dp;
@@ -26,5 +26,13 @@
 }
 </style>
 <script>
+import { push } from '@system.router'
 
+export default {
+  data: {
+  },
+  goAdd() {
+    push({ uri: 'pages/auth' })
+  }
+}
 </script>
