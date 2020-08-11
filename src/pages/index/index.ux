@@ -2,14 +2,28 @@
 
 <template>
   <page>
-    <div class="box-fill index">
-      <text>hello world</text>
+    <div class="box-fill column-center index">
+      <img src="/images/index-add.png" alt="" class="img" />
+      <text class="text">添加XX</text>
     </div>
   </page>
 </template>
 <style lang="less">
 @import '../../common/style.less';
 
+.index {
+  .img {
+    width: 160dp;
+    height: 160dp;
+    margin-bottom: 40dp;
+  }
+
+  text {
+    color: #ffffff;
+    font-size: 48dp;
+    font-weight: 700;
+  }
+}
 </style>
 <script>
 
