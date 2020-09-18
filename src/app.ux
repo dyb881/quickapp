@@ -6,6 +6,9 @@
 import './common/global'
 import util from './common/util'
 
+const injectRef = Object.getPrototypeOf(global) || global
+injectRef.regeneratorRuntime = require('@babel/runtime/regenerator')
+
 const isProduction = false
 
 export default {
